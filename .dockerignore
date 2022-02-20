@@ -1,0 +1,12 @@
+.vscode
+.DS_Store
+.git*
+.env*
+.eslintrc.js
+*.yml
+*.yaml
+*.md
+node_modules
+Dockerfile*
+dist
+helm
