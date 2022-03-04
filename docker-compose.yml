@@ -12,7 +12,7 @@ services:
       - DATABASE_WRITE_HOST=database
       - DATABASE_READ_HOST=database
       - DATABASE_PORT=3306
-      - DATABASE_NAME=Noteing
+      - DATABASE_NAME=learn
       - DATABASE_USER=root
       - DATABASE_PASSWORD=test
       - DATABASE_SYNC=true
