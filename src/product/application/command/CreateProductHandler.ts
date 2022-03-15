@@ -25,7 +25,7 @@ export class CreateProductHandler
       id,
       title,
       creatorId,
-      imageFileId,
+      imageFileId
     );
     await this.productRepository.save(product);
     product.commit();
