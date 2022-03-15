@@ -2,8 +2,7 @@ import { OnModuleDestroy, OnModuleInit } from "@nestjs/common";
 import { Connection, createConnection } from "typeorm";
 
 import { Config } from "src/Config";
-
-
+import { ProductEntity } from "src/product/infrastructure/entity/ProductEntity";
 
 export class AppService implements OnModuleInit, OnModuleDestroy {
   private databaseConnection: Connection;
@@ -19,9 +18,7 @@ export class AppService implements OnModuleInit, OnModuleDestroy {
   }
 
   private async createConnection(): Promise<void> {
-    const entities = [
-      ProductEntity,
-    ];
+    const entities = [ProductEntity];
 
     this.databaseConnection = await createConnection({
       type: "mysql",
