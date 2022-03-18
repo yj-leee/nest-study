@@ -14,7 +14,7 @@ export class FindProductByIdHandler
   private readonly productQuery: ProductQuery;
 
   async execute(
-    query: FindProductByIdQuery
+    query: FindProductByIdQuery,
   ): Promise<FindProductByIdResult | null> {
     return await this.productQuery.findById(query.id);
   }

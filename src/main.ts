@@ -11,8 +11,8 @@ import { Config } from "src/Config";
 
 function setupSwagger(app: INestApplication): void {
   const documentBuilder = new DocumentBuilder()
-    .setTitle("Noteing backend")
-    .setDescription("Noteing backend swagger document")
+    .setTitle("Node Study")
+    .setDescription("Node Study swagger document")
     .setVersion("0.1")
     .addBearerAuth()
     .build();

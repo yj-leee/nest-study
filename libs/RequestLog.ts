@@ -6,9 +6,8 @@ export class RequestLog extends String {
       JSON.stringify({
         request: request.method + " " + request.url,
         requestId: request.requestId,
-        user: request.user,
         response: responseBody,
-      })
+      }),
     );
   }
 }
