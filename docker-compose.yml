@@ -25,6 +25,7 @@ services:
       - GMAIL_USER=gmail-user
       - GMAIL_CLIENT_ID=gmail-client-id
       - GMAIL_PRIVATE_KEY=gmail-private-key
+      - SENTRY_DSN=https://05f6b7206d2f4043b26be1d4ab5130e8@o1173299.ingest.sentry.io/6268258
     volumes:
       - ./src:/app/src
       - ./libs:/app/libs

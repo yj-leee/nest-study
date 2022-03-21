@@ -19,4 +19,9 @@ export class AppController {
   favicon() {
     return;
   }
+
+  @Get("/error")
+  getError() {
+    throw new Error('Hi Sentry!');
+  }
 }

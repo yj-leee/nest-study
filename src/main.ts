@@ -1,10 +1,7 @@
 import { INestApplication, ValidationPipe } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-
-import { LoggingInterceptor } from "libs/LoggingInterceptor";
-import { HttpExceptionFilter } from "libs/HttpExceptionFilter";
-import { RequestParsingMiddleware } from "libs/RequestParsingMiddleware";
+import * as Sentry from "@sentry/node";
 
 import { AppModule } from "src/AppModule";
 import { Config } from "src/Config";
@@ -25,10 +22,10 @@ function setupSwagger(app: INestApplication): void {
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
-  app.use(RequestParsingMiddleware);
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
-  app.useGlobalInterceptors(new LoggingInterceptor());
-  app.useGlobalFilters(new HttpExceptionFilter());
+  Sentry.init({
+    dsn: new Config().SENTRY_DSN,
+  });
   setupSwagger(app);
   await app.listen(new Config().PORT);
 }

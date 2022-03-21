@@ -59,6 +59,9 @@ export class Config {
   @IsString()
   readonly GMAIL_PRIVATE_KEY = process.env.GMAIL_PRIVATE_KEY as string;
 
+  @IsString()
+  readonly SENTRY_DSN: string = process.env.SENTRY_DSN as string;
+
   constructor() {
     const error = validateSync(this);
     if (error.length) {

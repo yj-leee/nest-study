@@ -1,8 +1,5 @@
 import { Logger, UnauthorizedException } from "@nestjs/common";
 import { NextFunction, Request, Response } from "express";
-import { verify } from "jsonwebtoken";
-
-import { Config } from "src/Config";
 
 import { EntityId } from "libs/EntityId";
 
